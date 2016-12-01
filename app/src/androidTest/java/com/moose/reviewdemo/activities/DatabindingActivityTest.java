@@ -59,7 +59,7 @@ public class DatabindingActivityTest{
 
         onView(withText(name1 + " : " + psw1)).check(matches(isDisplayed()));
 //        onView(withText(name2)).check(matches(isDisplayed()));
-        RecyclerViewActions.
+
     }
 
     private void createItem(String name, String psw){
