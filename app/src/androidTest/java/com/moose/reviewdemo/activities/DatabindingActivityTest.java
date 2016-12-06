@@ -57,7 +57,7 @@ public class DatabindingActivityTest{
         createItem(name1, psw1);
         createItem(name2, "1993yangshunfa0929");
 
-        onView(withText(name1 + " : " + psw1)).check(matches(isDisplayed()));
+        onView(withId(R.id.moose_ll_textcontainer)).check(matches(isDisplayed()));
 //        onView(withText(name2)).check(matches(isDisplayed()));
 
     }

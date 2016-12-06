@@ -3,7 +3,9 @@ package com.moose.reviewdemo;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.DrawFilter;
 import android.graphics.Paint;
+import android.graphics.PaintFlagsDrawFilter;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
@@ -20,6 +22,7 @@ public class Circle2RectangleView extends View {
     private Thread thread;
     private Thread retangle2Circle;
     private boolean type = true;
+    private long SLEEP_MILLIONS = 100;
 
     public Circle2RectangleView(Context context) {
         super(context);
@@ -54,6 +57,8 @@ public class Circle2RectangleView extends View {
 
         RectF rec = new RectF(top, top, right, right);
         canvas.drawRoundRect(rec, round, round, paint);
+        DrawFilter filter = new PaintFlagsDrawFilter(1,1);
+        canvas.setDrawFilter(filter);
     }
 
     public void vary() {
@@ -63,14 +68,14 @@ public class Circle2RectangleView extends View {
                 @Override
                 public void run() {
                     while (true) {
-                        if (round <= 20 ) {
+                        if (round <= 5 ) {
                             break;
                         }
                         round -= 1;
                         right -= 0.5;
                         top += 0.5;
                         try {
-                            Thread.sleep(2);
+                            Thread.sleep(SLEEP_MILLIONS);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -91,7 +96,7 @@ public class Circle2RectangleView extends View {
                         right += 0.5;
                         top -= 0.5;
                         try {
-                            Thread.sleep(2);
+                            Thread.sleep(SLEEP_MILLIONS);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -100,6 +105,6 @@ public class Circle2RectangleView extends View {
                 }
             }).start();
         }
-
     }
+
 }
