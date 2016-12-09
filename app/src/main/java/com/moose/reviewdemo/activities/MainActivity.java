@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.moose_btn_start_service_activity)
     public void startServiceActivity(){
-        startActivity(new Intent(this, ServiceDemoActivity.class));
+//        startActivity(new Intent(this, ServiceDemoActivity.class));
+        startActivity(new Intent(this, ChartActivity.class));
     }
     @OnClick(R.id.moose_btn_databinding_activity)
     public void startDatabinding(){

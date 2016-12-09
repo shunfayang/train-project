@@ -73,4 +73,5 @@ dependencies {
     compile rootProject.ext.dependencies["dagger"]
     apt 'com.google.dagger:dagger-compiler:2.8'
     provided 'org.glassfish:javax.annotation:10.0-b28'
+    compile project(':MPChartLib')
 }
