@@ -25,6 +25,10 @@
         android:onClick="vary"
         android:id="@+id/moose_vary"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="10dp" />
+    <com.moose.reviewdemo.SuperpositionView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        />
 
 </LinearLayout>
